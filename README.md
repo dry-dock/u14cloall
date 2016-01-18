@@ -26,36 +26,3 @@ Available clojure versions:
 13. rethinkdb 2.0
 14. riak latest
 
-## How to use
-You can use this image to run clojure builds on Shippable. Just update your
-`shippable.yml` file and add the `build_image` directive. Here's a sample YML file to get you going:
-
-````````
-language: clojure
-
-lein:
-  - lein2
-
-services:
-  - cassandra
-  - elasticsearch
-  - memcached
-  - mongodb
-  - mysql
-  - neo4j
-  - postgres
-  - rabbitmq
-  - redis
-  - selenium
-  - sqllite
-  - couchdb
-  - rethinkdb
-  - riak
-
-build_image: drydock/u14cloall:prod
-
-# Running the test with Leiningen
-script:
-  - lein test
-
-`````````
