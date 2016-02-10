@@ -3,6 +3,25 @@ language: clojure
 lein:
   - lein2
 
-install: true
+build:
+  pre_ci:
+    # Always pull the latest base image to avoid any cached images on the host
+    - docker pull drydock/u14all:prod
+    - docker build --rm -t drydock/u14cloall:tip .
 
-script: true
+  pre_ci_boot:
+    image_name: drydock/u14cloall
+    image_tag: tip
+    pull: false
+
+  ci:
+    # We can add sanity checks to ensure the image was built successfully here
+    - lein version
+
+  on_success:
+    - if [ "$IS_PULL_REQUEST" != true ]; then docker push drydock/u14cloall:tip; fi
+
+integrations:
+  hub:
+    - integrationName: "dockerhub"
+      type: "docker"
