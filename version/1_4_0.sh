@@ -2,7 +2,7 @@
 
 # Install Clojure 1.4.0
 echo "================= Installing Clojure-1.4.0 ==================="
-sudo wget http://central.maven.org/maven2/org/clojure/clojure/1.4.0/clojure-1.4.0.jar
+sudo wget -nv http://central.maven.org/maven2/org/clojure/clojure/1.4.0/clojure-1.4.0.jar
 mkdir $HOME/lib && mv clojure-1.4.0.jar $HOME/lib/
 cat >/usr/local/bin/clj <<EOF
 #!/bin/bash
