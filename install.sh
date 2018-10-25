@@ -6,6 +6,8 @@ sudo mkdir -p /var/lib/apt/lists/partial
 sudo apt-get clean
 sudo apt-get update
 sed -i 's/keystore.type=pkcs12/keystore.type=jks/g' /etc/java-11-openjdk/security/java.security
+sudo dpkg --purge --force-depends ca-certificates-java
+sudo apt-get install ca-certificates-java
 
 # install Clojure's build tool: leiningen
 echo "================= Install clojure's build tool: leiningen ==================="
