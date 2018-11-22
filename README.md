@@ -6,5 +6,9 @@ Available clojure versions:
 
 1. 1.9.0
 
-**Services:**: Refer https://github.com/dry-dock/u14all for list of supported services
+u14cloall Docker Hub repo: [drydock/u14cloall](https://hub.docker.com/r/drydock/u14cloall/)
+  
+**Services:**
+
+Please refer [u14all](https://github.com/dry-dock/u14all) for a list of supported services
 
